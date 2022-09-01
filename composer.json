@@ -1,0 +1,20 @@
+{
+    "name": "viper75/comfortable-php",
+    "description": "A Simple PHP MVC Framework",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/",
+            "System\\": "Cores/"
+        }
+    },
+    "authors": [
+        {
+            "name": "fortunatus-ek"
+        }
+    ],
+    "require": {
+      "ext-pdo": "*"
+    }
+}

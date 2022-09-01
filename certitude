@@ -1,0 +1,7 @@
+#!/usr/bin/env php
+<?php
+require './vendor/autoload.php';
+
+use System\Console\Console;
+
+$console = new Console($argv, $argc);

@@ -1,0 +1,16 @@
+# Options -Indexes
+
+# RewriteEngine On
+# #RewriteBase /public
+
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule !\.(pdf|js|ico|gif|jpg|png|svg|css|rar|zip|tar\.gz)$ public/ [QSA]
+
+RewriteEngine On
+
+RewriteBase /
+
+RewriteCond %{REQUEST_URI} !/public/bootstrap.php
+
+RewriteRule !\.(pdf|js|ico|gif|jpg|png|svg|css|map|woff2|ttf|rar|zip|tar\.gz)$ /public/bootstrap.php/$1

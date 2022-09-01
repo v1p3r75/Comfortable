@@ -1,0 +1,22 @@
+:root{
+    --bg-color : #1a2038;
+    --color-primary : #7467ef;
+    --color-second : #ebebeb;
+    --color-link : #64FFDA;
+    --bg-input : #7467ef;
+    --color-surface-fill: rgba(29,71,83,0.5);
+
+}
+html, body {width: 100%; height: 100%; overflow: hidden;} a {text-decoration: none; color: inherit}
+#pageContent {background-color: var(--bg-color)!important; padding: 3%; color : var(--color-primary)}
+/* LOGIN PAGE */
+.logo {color:white; top: 20px; left: 20px; width: 50px; height: 50px; padding: 8px; border: 2px solid white; border-radius: 30px; text-align: center;}
+.login {width: 60%; min-height: 350px; border-radius: 15px}
+.login-image {width : 40%; border-radius: 15px 0px 0px 15px}
+.login-form {width : 60%; background-color: var(--color-second);border-radius: 0 15px 15px 0}
+.login-form input[type=submit] {background-color: var(--bg-input);} .login-form .forgot-pass {color: var(--bg-input)}
+.lh-35 {line-height: 35px;}
+/* .logo {width: 50px; height: 50px; padding: 8px; border: 2px solid var(--color-link); border-radius: 30px;}
+.color-link {color: var(--color-link);} .w-80 {width: 80%;}
+.menubar {background-color: var(--color-bg);} .menubar i {line-height: 25px;} .menubar a {display: block;}
+.menu-active {background-color: var(--bg-color);} */

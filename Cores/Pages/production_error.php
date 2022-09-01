@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>500 - INTERNAL SERVER ERROR</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:700,900" rel="stylesheet">
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        #page {
+            position: relative;
+            height: 100vh;
+            background: #030005;
+        }
+        #page .error {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        .error {
+            max-width: 767px;
+            width: 100%;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        .error .error-display {
+            position: relative;
+            height: 180px;
+            margin-bottom: 20px;
+            z-index: -1;
+        }
+        .error .error-display h1 {
+            font-family: 'Montserrat', sans-serif;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50% , -50%);
+            -ms-transform: translate(-50% , -50%);
+            transform: translate(-50% , -50%);
+            font-size: 224px;
+            font-weight: 900;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            margin-left: -12px;
+            color: #030005;
+            text-transform: uppercase;
+            text-shadow: -1px -1px 0px #8400ff, 1px 1px 0px #ff005a;
+            letter-spacing: -20px;
+        }
+        .error .error-display h2 {
+            font-family: 'Montserrat', sans-serif;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 110px;
+            font-size: 42px;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            text-shadow: 0px 2px 0px #8400ff;
+            margin: 0;
+        }
+
+        .error a {
+            font-family: 'Montserrat', sans-serif;
+            display: inline-block;
+            text-transform: uppercase;
+            color: #ff005a;
+            text-decoration: none;
+            border: 2px solid;
+            background: transparent;
+            padding: 10px 40px;
+            font-size: 14px;
+            font-weight: 700;
+            -webkit-transition: 0.2s all;
+            transition: 0.2s all;
+        }
+        .error a:hover {
+            color: #8400ff;
+        }
+        @media only screen and (max-width: 767px) {
+            .error .error-display h2 {
+                font-size: 24px;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            .error .error-display h1 {
+                font-size: 182px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+	<div id="page">
+		<div class="error">
+			<div class="error-display">
+				<h1>500</h1>
+				<h2>An error has occured. Please contact the site administrator</h2>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
