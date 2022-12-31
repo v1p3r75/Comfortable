@@ -136,8 +136,8 @@ class SystemModel {
             $insertData['values'] .= '"'. secure($value) .'"' .',';
         }
         if($this->create_at != ''){
-            $date = new \DateTime('now', new \DateTimeZone(env('TIMEZONE')));
-            $date = $date -> format('Y:m:d h:m:s');  
+            $DateTime = new \DateTime('now', new \DateTimeZone(env('TIMEZONE')));
+            $date = $DateTime->format('Y-m-d H:i:s');
             $insertData['columns'] .= $this->create_at . ',';
             $insertData['values'] .= '"'. $date .'",';
         }

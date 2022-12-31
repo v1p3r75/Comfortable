@@ -11,7 +11,7 @@ class UserController extends Controller {
         $data = [
             'names' => 'Jack Boer',
             'email' => 'jack@fr.fr',
-            'num' => 9865
+            'num' => '34533535'
         ];
         $model ->insert($data);
 //		return $this->request->redirectTo('/home');
