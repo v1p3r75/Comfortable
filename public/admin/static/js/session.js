@@ -1,7 +1,7 @@
 (function(){
     'use strict'
 
-    const BASE_URL = 'http://comfortable.dev';
+    const BASE_URL = 'https://comfortable.dev';
     let crud = function(){
         $('.send').click(function(e){
             e.preventDefault();

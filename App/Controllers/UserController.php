@@ -9,13 +9,11 @@ class UserController extends Controller {
 		
         $model = new UserModel();
         $data = [
-            'a' => $model ->insert(
-                [
-                'names' => 'Jack Boer',
-                'email' => 'jack@fr.fr',
-                'num' => 9865
-            ]),
+            'names' => 'Jack Boer',
+            'email' => 'jack@fr.fr',
+            'num' => 9865
         ];
+        $model ->insert($data);
 //		return $this->request->redirectTo('/home');
 		return view('home', ['data' => $data]);
     }

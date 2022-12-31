@@ -110,6 +110,16 @@ function exceptionManager($e){
 	}
 }
 
+/**
+ * @param $code status code
+ * @param $message success or fail message
+ * @return void
+ */
+function sendApiMessage($code, $message) {
+
+	echo json_encode([$code, $message]);
+}
+
 // function error_handler($code,$message,$file){
 // 	throw new \Exception($message, $code);
 // }

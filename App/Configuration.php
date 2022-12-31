@@ -17,7 +17,7 @@ $appVar = [
 
     /* DATABASE INFORMATION */
     'DB_HOST' => 'localhost',
-    'DB_NAME' => 'forever',
+    'DB_NAME' => 'comfortable',
     'DB_USERNAME' => 'root',
     'DB_PASSWORD' => '',
     'DB_CHARSET' => 'utf8',

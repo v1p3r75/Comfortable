@@ -8,14 +8,7 @@ use App\Models\Admin\AdminUsersModel;
 class AdminUsersController extends Controller
 {
 	private $model = null;
-	private $tableSql = "CREATE TABLE `cf_xxx_users` (`id` int(11) NOT NULL,`username` varchar(255) CHARACTER SET utf8 NOT NULL,`email` int(255) NOT NULL,`role` tinyint(1) NOT NULL DEFAULT '0',`password` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-ALTER TABLE `cf_xxx_users`
-  ADD PRIMARY KEY (`id`);
-ALTER TABLE `cf_xxx_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-";
+	private $tableSql = "CREATE TABLE `cf_xxx_users` (`id` int(11) NOT NULL,`username` varchar(255) CHARACTER SET utf8 NOT NULL,`email` int(255) NOT NULL,`role` tinyint(1) NOT NULL DEFAULT '0',`password` int(255) NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=latin1;ALTER TABLE `cf_xxx_users` ADD PRIMARY KEY (`id`); ALTER TABLE `cf_xxx_users` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;";
 
 	public function __construct(){
 		parent::__construct();
@@ -64,6 +57,7 @@ ALTER TABLE `cf_xxx_users`
 				'status' => 400,
 				'message' => 'All Fields are required'
 			];
+			// return sendApiMessage(400, 'All Fields are required');
 		}else {
 			$db_verify = $model->builder("SELECT * FROM ". $model -> getModel() ." WHERE email = '". secure($data['email']) . "'");
 			$db_verify->execute();

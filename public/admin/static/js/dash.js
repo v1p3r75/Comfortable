@@ -9,7 +9,7 @@
     
          const settings = {
     
-           API_BASEURL : "http://comfortable.dev/admin/",
+           API_BASEURL : "https://comfortable.dev/admin/",
     
            /* DATA ATTIBUTES */
        

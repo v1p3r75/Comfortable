@@ -53,11 +53,11 @@ class SystemRoutes {
     }
 
 	public function get(string $uri, $callback){
-		return $this->add('get',$uri,$callback);
+		return self::add('get',$uri,$callback);
 	}
 
 	public function post(string $uri, $callback){
-		return $this->add('post',$uri,$callback);
+		return self::add('post',$uri,$callback);
 	}
 
 	/**
