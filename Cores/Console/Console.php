@@ -30,7 +30,7 @@ class Console
 		$this->run();
 	}
 
-	public function run(){
+	public function run() {
 		$br = "\n\n";
 		print $this->colorText($this->welcomeMsg, 'black', 'red');
 		$this->params[0] = $this->params[0] ?? 'help';

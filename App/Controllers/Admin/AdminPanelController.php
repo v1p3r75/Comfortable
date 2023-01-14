@@ -46,7 +46,6 @@ class AdminPanelController extends Controller {
 				$currentModelInfo = $modelsData[$table];
 				$this->setProps($this->currentModel, $table, $currentModelInfo);
 			}else{ $this->currentModel -> setModel($table); }
-//			dumpExit($currentModelInfo);
             $columns = $this->currentModel -> getAllColumns();
             $data = $this->currentModel -> findAll();
 
