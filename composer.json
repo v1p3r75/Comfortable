@@ -2,6 +2,7 @@
     "name": "viper75/comfortable",
     "description": "A Simple PHP MVC Framework",
     "type": "project",
+    "version": "1.0.0",
     "license": "MIT",
     "autoload": {
         "psr-4": {
