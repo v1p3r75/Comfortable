@@ -10,7 +10,7 @@
             "System\\": "Cores/"
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "authors": [
         {
             "name": "fortunatus-ek",
