@@ -23,7 +23,7 @@
 			<?php foreach($data as $k): ?>
                 <tr data-cf-data='<?= json_encode($k) ?>'>
 					<?php foreach($k as $v => $c): ?>
-                        <td scope="col"><?= $k[$v] ?></td>
+                        <td scope="col"><?= secure($k[$v]) ?></td>
 					<?php endforeach; ?>
                     <td class="d-flex gap-2">
                         <button title="Renommer" class="btn btn-default text-center cl-link ui-action action" data-display-target-update="popup-update" data-cf-action-type='update'><i class="fa fa-pen"></i></button>
