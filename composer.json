@@ -1,5 +1,5 @@
 {
-    "name": "viper75/comfortable-php",
+    "name": "viper75/comfortable",
     "description": "A Simple PHP MVC Framework",
     "type": "project",
     "license": "MIT",
@@ -11,7 +11,11 @@
     },
     "authors": [
         {
-            "name": "fortunatus-ek"
+            "name": "fortunatus-ek",
+            "email": "elfriedv16@gmail.com",
+            "homepage": "https://fortunatus-ek.vercel.app",
+            "role": "fullstack developer"
+
         }
     ],
     "require": {
