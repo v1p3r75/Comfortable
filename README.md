@@ -25,7 +25,7 @@ Thank you for choosing Comfortable!
 Install comfortable with composer
 
 ```bash
-  composer install v1p3r75/comfortable
+  composer create-project viper75/comfortable
   cd comfortable
 ```
     
