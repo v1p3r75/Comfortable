@@ -39,7 +39,7 @@ Install comfortable with composer
 Clone the project
 
 ```bash
-  git clone https://github.com/v1p3r75/comfortable
+  git clone https://github.com/v1p3r75/comfortable.git
 ```
 
 Go to the project directory
