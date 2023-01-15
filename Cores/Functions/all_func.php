@@ -25,16 +25,14 @@ function dumpExit(...$vars): void
 /**
  * Save Env Information from .env file
  */
-function saveEnv(){
-
-	require $_SERVER['DOCUMENT_ROOT']. '/Cores/AppConfig.php'; // Load AppConfig.php (system variables)
+function saveEnv($appVar){
 
 	foreach($appVar as $key => $value){
 		putenv($key . '=' . $value);
 	}
 	// Save .env information
 
-	$envFilePath = $_SERVER['DOCUMENT_ROOT'].'/.env';
+	$envFilePath = $_SERVER['DOCUMENT_ROOT']. DIRECTORY_SEPARATOR .'.env';
 	if(!file_exists($envFilePath)){
 		die("Environment file not found. Please create it to root folder.");
 

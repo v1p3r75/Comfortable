@@ -15,9 +15,10 @@
 
 require ('../vendor/autoload.php');
 require_once ('../Cores/Functions/all_func.php');
+require_once ('../Cores/AppConfig.php');
 require_once('../App/Routes/Routes.php');
 
 
-saveEnv(); // Save the environment variables of configuration file
+saveEnv($appVar); // Save the environment variables of configuration file
 
 $route -> run(trim($_SERVER['REQUEST_URI']));
