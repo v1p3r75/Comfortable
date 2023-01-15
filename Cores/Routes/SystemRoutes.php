@@ -27,6 +27,10 @@ class SystemRoutes {
 	 */
     public $defaultMethod = 'index';
 
+	/**
+     * Request object
+     * @var 
+     */
 	public $request = null;
 
 
@@ -61,10 +65,23 @@ class SystemRoutes {
         $this -> routes[$method][$uri] = $callback;
     }
 
+	/**
+	 * Add get url path to route
+	 * @param string $uri The route uri
+	 * @param $callback 
+	 * @return mixed|void
+	 */
 	public function get(string $uri, $callback){
 
 		return $this->add('get',$uri,$callback);
 	}
+
+	/**
+	 * Add post url path to route
+	 * @param string $uri The route uri
+	 * @param $callback 
+	 * @return mixed|void
+	 */
 
 	public function post(string $uri, $callback){
 
@@ -88,69 +105,34 @@ class SystemRoutes {
 
 	   foreach ($this->routes[$method] as $route => $callback) {
 			
-			if(preg_match_all("/{(\w+)(:[^}]+)?}/", $route, $matches)){
-				$routeNames = $matches[1];
-			}
+			// if(preg_match_all("/{(\w+)(:[^}]+)?}/", $route, $matches)){
+			// 	$routeNames = $matches[1];
+			// }
 			$routeRegex = "@^" . preg_replace_callback("/{(\w+)(:[^}]+)?}/", fn($m) => isset($m[2]) ? "({$m[2]})" : "(\w+)", $route) . "$@";
 
 			if(preg_match_all($routeRegex, $currentURI, $matches)){
-				//return dump($matches);
+				
 				$params = [];
 				for ($i = 1; $i < count($matches); $i++) {
-					$params[] = $matches[$i][0];
+					$params[] = $matches[$i][0]; // List of parameters that will parse to function
+
 				}
 
 				if(is_array($callback)){ // If callback is an array (class, method)
 
 					$controller = new $callback[0]();
 					$method = $callback[1];
-					// return $controller->$method($params);
 					return call_user_func_array([$controller, $method], $params);
-
 
 				}else if(is_callable($callback)){ // If callback is a function (closure)
 
 					return call_user_func_array($callback, $params);
 
-				}else{
-					continue;
 				}
-			}else {
-			// 	dump($routeRegex,$route, $currentURI);
-				// dump($this->getAllRoutes());
-				continue;
-				// throw new SystemExceptions\NotFoundException('forPage');
-			} 
+			}
 
 	   }
-	//    exit();
-    //     if(! key_exists($currentURI, $this->routes[$method])){
-    //     }
-
-    //     $callback = $this->routes[$method][$currentURI];
-    //     if(is_array($callback)){
-    //         $controller = new $callback[0]();
-    //         $method = $callback[1];
-	// 		// return var_dump($_SERVER['REQUEST_URI']);
-    //         return $controller->$method();
-    //     }else if(is_callable($callback)){
-	// 		// return var_dump($_SERVER['REQUEST_URI']);
-    //         return call_user_func($this->routes[$method][$currentURI]);
-    //     }else{
-	// 		throw new SystemExceptions\ParseErrorException('forCallback');
-	// 	}
-
-	//    $uri = $this->getUri($method);
-	//    foreach ($uri as $route) {
-	// 	$pattern = '#^'. $route .'#';
-	// 	if($route != $this->basepath) 
-	// 		if(preg_match($pattern, $currentURI,$matches)){
-	// 			// dump($matches);
-	// 			$a = preg_replace($pattern,'',$currentURI);
-	// 			$params = explode('/',$a);
-	// 			dump($route, $currentURI, $a, $params);
-	// 		}
-	//    }
+	   throw new SystemExceptions\NotFoundException('forPage');
     }
 
 	/**

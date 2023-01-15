@@ -112,12 +112,12 @@ function exceptionManager($e){
 
 /**
  * @param $code status code
- * @param $Data success or fail Data
+ * @param $data success or fail data
  * @return void
  */
-function sendApiData($code, $Data) {
+function sendApiData(array $data = []) {
 
-	echo json_encode($Data);
+	echo json_encode($data);
 }
 
 // function error_handler($code,$message,$file){

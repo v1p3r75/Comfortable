@@ -8,12 +8,12 @@ use System\Routes\SystemRoutes;
 
 $route = new SystemRoutes();
 
-$route -> get('/', function($id){
+$route -> get('/{id}', function($id){
     view('home', ['data' => $id]);
 });
-$route -> get('/user/{id}', [UserController::class,'view']);
-$route -> post('/user', function(){
-    return sendApiData(200, ['status' => 'ok']);
+$route -> get('/user/{id}', [UserController::class,'viw']);
+$route -> post('/user/{id}/tel', function($name){
+    return sendApiData(['status' => $name]);
 }); 
 
 
