@@ -2,6 +2,7 @@
 
 use System\Exceptions\NotFoundException;
 
+
 function dump(...$vars): void
 {
     echo "<pre>";
@@ -22,15 +23,27 @@ function dumpExit(...$vars): void
 }
 
 /**
- * Save Env Information
- * @param $envs
+ * Save Env Information from .env file
  */
-function saveEnv(array $envs){
-	
-	foreach ($envs as $key => $value){
+function saveEnv(){
+
+	require $_SERVER['DOCUMENT_ROOT']. '/Cores/AppConfig.php'; // Load AppConfig.php (system variables)
+
+	foreach($appVar as $key => $value){
 		putenv($key . '=' . $value);
 	}
+	// Save .env information
 
+	$envFilePath = $_SERVER['DOCUMENT_ROOT'].'/.env';
+	if(!file_exists($envFilePath)){
+		die("Environment file not found. Please create it to root folder.");
+
+	}
+	
+	$envFileContent = file($envFilePath);
+	foreach($envFileContent as $line){
+		putenv(trim($line));
+	}
 }
 
 /**
@@ -39,7 +52,7 @@ function saveEnv(array $envs){
  */
 function view($filename, $vars = []){
     extract($vars);
-    $path = getenv('VIEW_PATH') . $filename . '.php';
+    $path = env('VIEW_PATH') . $filename . '.php';
     if(! file_exists($path)) throw new NotFoundException("forFile");
     return require($path);
 }
@@ -125,3 +138,4 @@ function sendApiData(array $data = []) {
 // }
 // set_error_handler('error_handler');
 set_exception_handler('exceptionManager');
+
