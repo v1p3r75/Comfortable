@@ -12,8 +12,8 @@ $route -> get('/', function(){
     view('home', ['data' => 'B']);
 });
 $route -> get('/bad', [UserController::class,'view']);
-$route -> post('/osue', function(){
-    return "Salut";
+$route -> post('/user', function(){
+    return sendApiData(200, ['status' => 'ok']);
 }); 
 
 

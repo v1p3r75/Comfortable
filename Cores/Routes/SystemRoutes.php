@@ -81,8 +81,10 @@ class SystemRoutes {
         if(is_array($callback)){
             $controller = new $callback[0]();
             $method = $callback[1];
+			// return var_dump($_SERVER['REQUEST_URI']);
             return $controller->$method();
         }else if(is_callable($callback)){
+			// return var_dump($_SERVER['REQUEST_URI']);
             return call_user_func($this->routes[$method][$currentURI]);
         }else{
 			throw new SystemExceptions\ParseErrorException('forCallback');

@@ -32,7 +32,7 @@ class Console
 
 	public function run() {
 		$br = "\n\n";
-		print $this->colorText($this->welcomeMsg, 'black', 'red');
+		print $this->colorText($this->welcomeMsg, 'black', 'green');
 		$this->params[0] = $this->params[0] ?? 'help';
 		
 		switch ($this->params[0]) {
@@ -41,9 +41,10 @@ class Console
 				break;
 
 			case 'serve':
-				print $this->colorText("█==█ Server starting ... $br");
+				$cmd = 'php -S localhost:' . $this->port .' -t public';
+				print $this->colorText("$br █==█ Server starting ... $br");
 				sleep(1);
-				return system('php -S localhost:' . $this->port .' -t .');
+				return system($cmd);
 				break;
 			
 			case 'app':

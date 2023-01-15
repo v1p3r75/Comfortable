@@ -11,6 +11,6 @@ RewriteEngine On
 
 RewriteBase /
 
-RewriteCond %{REQUEST_URI} !/public/bootstrap.php
+RewriteCond %{REQUEST_URI} !/public/index.php
 
-RewriteRule !\.(pdf|js|ico|gif|jpg|png|svg|css|map|woff2|ttf|rar|zip|tar\.gz)$ /public/bootstrap.php/$1
+RewriteRule !\.(pdf|js|ico|gif|jpg|png|svg|css|map|woff2|ttf|rar|zip|tar\.gz)$ /public/index.php/$1
