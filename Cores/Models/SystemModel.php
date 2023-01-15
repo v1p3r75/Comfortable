@@ -88,7 +88,7 @@ class SystemModel {
      */
     public function find($id, $select = '*')
     {
-        $res = $this->db->prepare('SELECT '. $select . ' FROM ' . $this->table . ' WHERE ' . $this->primaryKey . '=' . $id);
+        $res = $this->db->prepare('SELECT '. secure($select) . ' FROM ' . $this->table . ' WHERE ' . $this->primaryKey . '=' . $id);
         $res->execute();
         return $res->fetch();
     }

@@ -17,7 +17,7 @@ $appVar = [
 
     /* DATABASE INFORMATION */
     'DB_HOST' => 'localhost',
-    'DB_NAME' => 'fv_api2',
+    'DB_NAME' => 'ifri',
     'DB_USERNAME' => 'root',
     'DB_PASSWORD' => '',
     'DB_CHARSET' => 'utf8',

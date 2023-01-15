@@ -5,17 +5,17 @@ use App\Models\UserModel;
 
 class UserController extends Controller {
 
-    public function view(){
+    public function view($id){
 		
         $model = new UserModel();
-        $data = [
-            'names' => 'Jack Boer',
-            'email' => 'jack@fr.fr',
-            'num' => '34533535'
-        ];
-        $model ->insert($data);
+        // $data = [
+        //     'names' => 'Jack Boer',
+        //     'email' => 'jack@fr.fr',
+        //     'num' => '34533535'
+        // ];
+        // $model ->insert($data);
 //		return $this->request->redirectTo('/home');
-		return view('home', ['data' => $data]);
+		return view('home', ['data' => $model -> like("lastname", $id)]);
     }
 
     public function test(){

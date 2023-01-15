@@ -42,6 +42,12 @@ class Request  {
 		return $_SERVER['REQUEST_URI'];
 	}
 
+	public function getMethod(){
+
+        return $_SERVER['REQUEST_METHOD'];
+
+    }
+
 	public function redirectTo($url = ''){
 
 		return header('Location: ' . $url);
