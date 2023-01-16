@@ -55,7 +55,7 @@ class Console
 
 			case 'serve':
 				print $this->colorText($this->welcomeMsg);
-				$cmd = 'php -S localhost:' . $this->port .' -t public';
+				$cmd = 'php -s -S localhost:' . $this->port .' -t /';
 				print $this->colorText("$br █==█ Server starting ... $br");
 				sleep(1);
 				return system($cmd);

@@ -9,8 +9,7 @@ use System\Routes\SystemRoutes;
 $route = new SystemRoutes();
 
 $route -> get('/', function($id = null){
-    // dump(env('VIEW_PATH'));
-    view('home', ['data' => 2]);
+        view('home', ['data' => 2]);
 });
 $route -> get('/user/{id}', [UserController::class,'view']);
 $route -> post('/user/{id}/tel', function($name){

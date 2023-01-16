@@ -18,7 +18,7 @@ class AdminPanelController extends Controller {
 			return $this->request->redirectTo('/admin/login');
 		}
 		
-        return view('admin/index', ['db' => $db]);
+        return view('admin/index');
     }
 
     public function view(){
