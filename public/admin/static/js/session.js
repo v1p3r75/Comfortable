@@ -10,7 +10,6 @@
             let sendBtn = $(this).parent('.send-ctn').find('.send-wait');
             sendBtn.removeClass('d-none');
             let action = $(form).attr('action');
-            console.log(data.get('image'));
             $.ajax({
                 type: "POST",
                 url: BASE_URL + action,

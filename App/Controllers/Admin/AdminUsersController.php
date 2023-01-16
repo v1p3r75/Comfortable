@@ -4,6 +4,7 @@ namespace App\Controllers\Admin;
 
 use \App\Controllers\Controller;
 use App\Models\Admin\AdminUsersModel;
+use System\Database\DatabaseQuery;
 
 class AdminUsersController extends Controller
 {
@@ -50,6 +51,13 @@ class AdminUsersController extends Controller
 	}
 
 	public function login(){
+
+		$db = new DatabaseQuery();
+
+		if(! $db -> tableExist('cf_xxx_users')){
+			return sendApiData(['status' => 404, 'message' => "Framework Database Not Found. Please create database first and migrate table (php certitude migration:run create_comfortable_table)."]);
+		}
+
 		$model = new AdminUsersModel();
 		$data = $this->request->fromPost();
 		if(empty($data['email']) || empty($data['password'])){

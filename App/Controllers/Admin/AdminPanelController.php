@@ -13,15 +13,11 @@ class AdminPanelController extends Controller {
 	private $currentModel = null;
 
     public function index(){
-		
+
 		if(! $this->session->get('id')){
 			return $this->request->redirectTo('/admin/login');
 		}
-		$db = new DatabaseQuery();
-		if(! $db -> tableExist('cf_xxx_users')){
-			$usersControl = new AdminUsersController();
-			$usersControl -> createUsersTable();
-		}
+		
         return view('admin/index', ['db' => $db]);
     }
 
@@ -85,50 +81,39 @@ class AdminPanelController extends Controller {
 
 		$response = [];
 		if($type == 'add'){
+
 			unset($_POST['cf-xxx-model'], $_POST['type']);
 			$data = $this->request->fromPost();
 			try {
 				$this->currentModel -> insert($data);
-				$response = [
-					'status' => 200,
-					'message' => 'Registration was successful',
-				];
+				$response = [ 'status' => 200, 'message' => 'Registration was successful',];
 			}catch (\Exception $e){
-				$response = [
-					'status' => 400,
-					'message' => $e -> getMessage()
-				];
+				$response = [ 'status' => 400, 'message' => $e -> getMessage()];
 			}
+
 		}else if($type == 'update'){
+
 			$id = $this->request->fromPost('cf-xxx-id');
 			unset($_POST['cf-xxx-model'], $_POST['type'], $_POST['cf-xxx-id']);
 			$data = $this->request->fromPost();
 			try {
-				$response = [
-					'status' => 200,
-					'message' => 'Update successfully',
-					'return' => $this->currentModel -> update($id, $data),
-				];
+				$response = [ 'status' => 200, 'message' => 'Update successfully', 'return' => $this->currentModel -> update($id, $data),];
+
 			}catch (\Exception $e){
-				$response = [
-					'status' => 400,
-					'message' => $e -> getMessage()
-				];
+
+				$response = [ 'status' => 400, 'message' => $e -> getMessage()];
 			}
+
 		}else if($type == 'del'){
 			unset($_POST['cf-xxx-model'], $_POST['type']);
 			$data = $this->request->fromPost();
 			try {
 				$this->currentModel -> delete($data['cf-xxx-id']);
-				$response = [
-					'status' => 200,
-					'message' => 'Delete successfully',
-				];
+				$response = [ 'status' => 200, 'message' => 'Delete successfully',];
+
 			}catch (\Exception $e){
-				$response = [
-					'status' => 400,
-					'message' => $e -> getMessage()
-				];
+
+				$response = [ 'status' => 400, 'message' => $e -> getMessage() ];
 			}
 		}
 		return $this -> respond -> json($response);

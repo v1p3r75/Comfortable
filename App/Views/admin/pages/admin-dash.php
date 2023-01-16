@@ -1,4 +1,4 @@
-<div class="direction mb-5+">
+<div class="direction mb-5">
     <span class="fw-bold">Dashboard</span>
     <span><i class="mx-1">|</i><i class="fa fa-home cl-link"></i><i class="fa fa-angle-right mx-1"></i></span>
     <span>Dashboard</span>
