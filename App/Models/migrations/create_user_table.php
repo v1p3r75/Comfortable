@@ -15,11 +15,12 @@ class Migration implements MigrationInterface {
 
 	}
 
-	public function up() {}
+	public function up() {
+		return true;
+	}
 
 	public function down(){}
 
 }
 
-/* DON'T DELETE THIS LINE */
 $migration = new Migration();

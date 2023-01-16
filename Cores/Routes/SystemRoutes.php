@@ -143,4 +143,14 @@ class SystemRoutes {
         return $this -> routes;
     }
 
+	/**
+	 * Return all methods
+	 * @return array[]
+	 */
+
+	public function getAllMethod(): array {
+
+		return $this->methodsAllowed;
+	}
+
 }
