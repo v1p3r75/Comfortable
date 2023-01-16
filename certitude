@@ -1,7 +1,8 @@
 #!/usr/bin/env php
 <?php
 require './vendor/autoload.php';
+require './Cores/Functions/all_func.php';
+require './App/Routes/Routes.php';
 
 use System\Console\Console;
-
-$console = new Console($argv, $argc);
+$console = new Console($argv, $argc, $route);

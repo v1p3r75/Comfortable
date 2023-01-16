@@ -13,7 +13,7 @@ class SystemRoutes {
 	 * List of allowed methods
 	 * @var array|string[]
 	 */
-    private $methodsAllowed = ['get','post','put','update','delete'];
+    public $methodsAllowed = ['get','post','put','update','delete'];
 
 	/**
 	 * List of saved routes
