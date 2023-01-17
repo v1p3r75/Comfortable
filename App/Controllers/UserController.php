@@ -15,7 +15,7 @@ class UserController extends Controller {
         // ];
         // $model ->insert($data);
 //		return $this->request->redirectTo('/home');
-		return view('home', ['data' => $model -> like("lastname", $id)]);
+		return view('home', ['data' => $this->request->fromGet("name") ]);
     }
 
     public function test(){

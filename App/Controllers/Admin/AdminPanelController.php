@@ -80,6 +80,7 @@ class AdminPanelController extends Controller {
         $type = $this->request->fromPost('type') ?? '';
 
 		$response = [];
+		
 		if($type == 'add'){
 
 			unset($_POST['cf-xxx-model'], $_POST['type']);

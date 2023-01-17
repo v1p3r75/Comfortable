@@ -74,7 +74,7 @@ class SystemModel {
 
     public function findAll($select = '*')
 	{
-       $res = $this->db->prepare('SELECT '. $select . ' FROM ' . $this->table);
+       $res = $this->db->prepare('SELECT '. secure($select) . ' FROM ' . $this->table);
         // $res = $this->db->prepare('SELECT ? FROM );
         $res->execute();
         return $res->fetchAll();
@@ -88,7 +88,7 @@ class SystemModel {
      */
     public function find($id, $select = '*')
     {
-        $res = $this->db->prepare('SELECT '. secure($select) . ' FROM ' . $this->table . ' WHERE ' . $this->primaryKey . '=' . $id);
+        $res = $this->db->prepare('SELECT '. secure($select) . ' FROM ' . $this->table . ' WHERE ' . $this->primaryKey . '=' . secure($id));
         $res->execute();
         return $res->fetch();
     }
@@ -99,7 +99,7 @@ class SystemModel {
 	 * @return array|false
 	 */
     public function like($colmun, $search = ""){
-        $res = $this->db->prepare('SELECT * FROM ' . $this->table . ' WHERE ' . $colmun . ' LIKE "%' . secure($search) .'%"');
+        $res = $this->db->prepare('SELECT * FROM ' . $this->table . ' WHERE ' . secure($colmun) . ' LIKE "%' . secure($search) .'%"');
         $res->execute();
         return $res->fetchAll();
     }
@@ -172,7 +172,7 @@ class SystemModel {
 
         foreach($data as $column => $value) {
 //			if(empty($value)) continue;
-			$res = $this->db->prepare('UPDATE ' . $this->table . ' SET '. secure($column) . ' = "' . secure($value) . '" WHERE '. $this->primaryKey .'='.$id);
+			$res = $this->db->prepare('UPDATE ' . $this->table . ' SET '. secure($column) . ' = "' . secure($value) . '" WHERE '. $this->primaryKey .'='. secure($id));
 			if(! $res->execute()) return false;
         }
         return true;

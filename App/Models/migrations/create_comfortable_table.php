@@ -26,6 +26,16 @@ class Migration implements MigrationInterface {
         return $this->db->query($sql);
     }
 
+
+    /** DON'T DELETE THIS FUNCTION */
+
+	public function runMigration(){
+
+		return $this -> up();
+		// return $this -> down();
+
+	}
+
 }
 
-$migration = 4;
+$migration = new Migration();

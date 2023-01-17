@@ -22,7 +22,7 @@ class AppConsole {
         if($cmd == 'exit' || $cmd == 'bye'){
             return $this->statut = false;
         }
-        // system('php -r -B ' . $cmd . '-E');
+        system('php -r' . $cmd . '-E');
         print($cmd . "\n");
     }
 }
