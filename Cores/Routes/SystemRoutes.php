@@ -95,7 +95,7 @@ class SystemRoutes {
 	 * @throws SystemExceptions\NotFoundException
 	 * @throws SystemExceptions\ParseErrorException
 	 */
-    public function run(string $currentURI = ""){
+    public function run($middlewares, string $currentURI = ""){
 
         $method = trim(strtolower($this->request->getMethod()), '/');
 
@@ -118,10 +118,12 @@ class SystemRoutes {
 
 				}
 
+				// $middlewares -> getAll();
+
 				if(is_array($callback)){ // If callback is an array (class, method)
 
 					$controller = new $callback[0]();
-					$method = $callback[1];
+					$method = $callback[1] ?? $this->defaultMethod;
 					return call_user_func_array([$controller, $method], $params);
 
 				}else if(is_callable($callback)){ // If callback is a function (closure)

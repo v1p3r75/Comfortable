@@ -1,0 +1,6 @@
+-----| TODO TASKS |-----
+
+- Fix Migration
+- Add Middleware (before request and after request)
+- Add More security (CSXF token, ...)
+- Admin Panel finalization

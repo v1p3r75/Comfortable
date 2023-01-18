@@ -17,8 +17,8 @@ require ('../vendor/autoload.php');
 require_once ('../Cores/Functions/all_func.php');
 require_once ('../Cores/AppConfig.php');
 require_once('../App/Routes/Routes.php');
-
+// require('../App/Middlewares/Middleware.php');
 
 saveEnv($appVar); // Save the environment variables of configuration file
 
-$route -> run(trim($_SERVER['REQUEST_URI']));
+$route -> run($appMiddleware = null, trim($_SERVER['REQUEST_URI']));

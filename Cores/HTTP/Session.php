@@ -10,18 +10,18 @@ class Session {
 
 	static function get(string $key = '')
     {
-		return $_SESSION[$key] ?? false;
+		return secure($_SESSION[$key]) ?? false;
     }
 
 	static function set($key, $value): void
 	{
-		$_SESSION[$key] = $value;
+		$_SESSION[$key] = secure($value);
 	}
 
 	static function setArray(array $data): void
 	{
 		foreach ($data as $key => $value){
-			$_SESSION[$key] = $value;
+			$_SESSION[$key] = secure($value);
 		}
 	}
 }
