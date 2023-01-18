@@ -96,7 +96,7 @@ class SystemRoutes {
 	 * @throws SystemExceptions\ParseErrorException
 	 */
     public function run($middlewares, string $currentURI = ""){
-
+		
         $method = trim(strtolower($this->request->getMethod()), '/');
 
        if(! $this -> methodIsCorrect($method)){

@@ -14,8 +14,8 @@ class UserController extends Controller {
         //     'num' => '34533535'
         // ];
         // $model ->insert($data);
-//		return $this->request->redirectTo('/home');
-		return view('home', ['data' => $this->request->fromGet("name") ]);
+		// return $this->request->redirectTo('');
+		return view('home', ['data' => '']);
     }
 
     public function test(){

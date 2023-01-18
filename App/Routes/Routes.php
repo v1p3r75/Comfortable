@@ -9,11 +9,11 @@ use System\Routes\SystemRoutes;
 $route = new SystemRoutes();
 
 $route -> get('/', function($id = null){
-        view('home', ['data' => 2]);
+        return view('home', ['data' => 2]);
 });
 $route -> get('/user/{id}', [UserController::class,'view']);
 $route -> post('/user/{id}/tel', function($name){
-    return view('home', ['data' => 2]);
+    return view('home', ['data' => 4]);
     return sendApiData(['status' => $name]);
 }); 
 

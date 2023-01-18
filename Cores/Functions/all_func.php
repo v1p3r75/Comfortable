@@ -2,7 +2,6 @@
 
 use System\Exceptions\NotFoundException;
 
-
 function dump(...$vars): void
 {
     echo "<pre>";
@@ -54,6 +53,7 @@ function view($filename, $vars = []){
     if(! file_exists($path)) throw new NotFoundException("forFile");
     return require($path);
 }
+
 
 function view_admins_image($filename){
     $path = getenv('ADMINS_IMG') . $filename;
