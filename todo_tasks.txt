@@ -3,4 +3,9 @@
 - Fix Migration
 - Add Middleware (before request and after request)
 - Add More security (CSXF token, ...)
+- Add a Template Engine (Ex: Twig)
+- Foreign Key support in Models
+- Form Builder (+++)
 - Admin Panel finalization
+- ?cache functionality
+- ?Unit Tests
